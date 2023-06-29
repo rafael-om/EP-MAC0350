@@ -104,9 +104,10 @@ LANGUAGE plpgsql
 AS $$
 BEGIN
     RETURN QUERY 
-        SELECT pes.nome, s.tipo_servico
+        SELECT pes.nome, per.tipo_perfil, s.tipo_servico
         FROM pessoa AS pes, rel_pessoa_perfil AS r, perfil AS per, servico AS s
-        WHERE pes.id_pessoa=r.id_pessoa AND r.id_perfil=per.id_perfil AND per.id_perfil=s.id_perfil;
+        WHERE pes.id_pessoa=r.id_pessoa AND r.id_perfil=per.id_perfil AND per.id_perfil=s.id_perfil
+        GROUP BY pes.nome, per.tipo_perfil, s.tipo_servico;
 END;
 $$;
 
