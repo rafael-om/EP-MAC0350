@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+
 @Controller
 public class PessoasController {
 
@@ -26,6 +27,12 @@ public class PessoasController {
                 new PessoaRowMapper());
         model.addAttribute("listapessoas", pessoas);
         return "pessoas";
+    }
+
+    @GetMapping("/pessoas")
+    public String lista31ex(Model model) {
+        List<> resposta  = jdbcTemplate.query(
+        );
     }
 
     @GetMapping("/pessoa")
