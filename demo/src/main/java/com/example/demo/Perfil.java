@@ -1,14 +1,18 @@
+package com.example.demo;
+import java.sql.Date;
+
 public class Perfil {
-    
-    String id_perfil;
+
+    // Dados cadastrais
+    Integer id_perfil;
     String codigo_perfil;
     String tipo_perfil;
 
-    public String getId_perfil() {
+    public Integer getId_perfil() {
         return id_perfil;
     }
 
-    public void setId_perfil(String id_perfil) {
+    public void setId_perfil(Integer id_perfil) {
         this.id_perfil = id_perfil;
     }
 

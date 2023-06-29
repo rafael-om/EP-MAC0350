@@ -51,6 +51,42 @@
             </div>
         </div>
     </div>
+
+    <div class="container px-5 pt-5">
+        <div class="row mb-2">
+            <div class="col">
+                <a class="btn btn-primary" href="#"  th:href="@{/pessoa}" role="button">Cadastrar Novo</a>        
+            </div>
+        </div>
+        <div class="row gx-5 align-items-center">
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th>ID Aluno</th>
+                        <th>ID Pessoa</th>
+                        <th>Nota de Ingresso</th>
+                        <th>Curso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${listapessoas}">
+                            <td th:text="${{p.getId_aluno}}">1</td>
+                            <td th:text="${{p.getId_pessoa}}">2</td>
+                            <td th:text="${{p.getNota_ingresso}}">Nota de Ingresso</td>
+                            <td th:text="${{p.getCurso}}">Curso</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/pessoa} + '/' + ${p.getIdPessoa}">Atualizar</a>
+                                <form action="#" th:action="@{/pessoa} + '/' + ${p.getIdPessoa}" th:method="delete" class="d-inline-block">
+                                    <button class="btn btn-outline-danger">Apagar</button>
+                                </form>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
