@@ -243,6 +243,188 @@
         </div>
     </div>
 
+
+    <div class="container px-5 pt-5">
+        <div class="row gx-5 align-items-center">
+            <h2> Perfis </h2>
+            <div class="row mb-2">
+                <div class="col">
+                    <a class="btn btn-primary" href="#"  th:href="@{/perfil}" role="button">Cadastrar Novo</a>        
+                </div>
+            </div>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id Perfil </th>
+                        <th> Código </th>
+                        <th> Tipo do Perfil </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${listaPerfis}">
+                            <td th:text="${{p.getId_perfil}}">1</td>
+                            <td th:text="${{p.getCodigo_perfil}}">Código</td>
+                            <td th:text="${{p.getTipo_perfil}}"> Tipo de Perfil</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/perfil} + '/' + ${p.getId_perfil}">Atualizar</a>
+                                <form action="#" th:action="@{/perfil} + '/' + ${p.getId_perfil}" th:method="delete" class="d-inline-block">
+                                    <button class="btn btn-outline-danger">Apagar</button>
+                                </form>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-5 pt-5">
+        <div class="row gx-5 align-items-center">
+            <h2> Relação Oferecimento Aluno </h2>
+            <div class="row mb-2">
+                <div class="col">
+                    <a class="btn btn-primary" href="#"  th:href="@{/rel_oferecimento_aluno}" role="button">Cadastrar Novo</a>        
+                </div>
+            </div>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id Oferecimento Aluno </th>
+                        <th> Id Oferecimento Disciplina Docente </th>
+                        <th> Id Aluno </th>
+                        <th> Nota </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${listaOferecimentoAlunos}">
+                            <td th:text="${{p.getId_oferecimento_aluno}}">1</td>
+                            <td th:text="${{p.getId_oferecimento_dd}}">Id Oferecimento Disciplina Docente</td>
+                            <td th:text="${{p.getId_aluno}}">Id Aluno</td>
+                            <td th:text="${{p.getNota}}">Nota</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/rel_oferecimento_aluno} + '/' + ${p.getId_oferecimento_aluno}">Atualizar</a>
+                                <form action="#" th:action="@{/rel_oferecimento_aluno} + '/' + ${p.getId_oferecimento_aluno}" th:method="delete" class="d-inline-block">
+                                    <button class="btn btn-outline-danger">Apagar</button>
+                                </form>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-5 pt-5">
+        <div class="row gx-5 align-items-center">
+            <h2> Relação Pessoa Perfil </h2>
+            <div class="row mb-2">
+                <div class="col">
+                    <a class="btn btn-primary" href="#"  th:href="@{/rel_pessoa_perfil}" role="button">Cadastrar Novo</a>        
+                </div>
+            </div>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id Pessoa Perfil </th>
+                        <th> Id Pessoa </th>
+                        <th> Id Perfil </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${listaPessoaPerfis}">
+                            <td th:text="${{p.getId_pessoa_perfil}}">1</td>
+                            <td th:text="${{p.getId_pessoa}}">Id Pessoa</td>
+                            <td th:text="${{p.getId_perfil}}">Id Perfil</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/rel_pessoa_perfil} + '/' + ${p.getId_pessoa_perfil}">Atualizar</a>
+                                <form action="#" th:action="@{/rel_pessoa_perfil} + '/' + ${p.getId_pessoa_perfil}" th:method="delete" class="d-inline-block">
+                                    <button class="btn btn-outline-danger">Apagar</button>
+                                </form>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-5 pt-5">
+        <div class="row gx-5 align-items-center">
+            <h2> Relação Pessoa Serviço </h2>
+            <div class="row mb-2">
+                <div class="col">
+                    <a class="btn btn-primary" href="#"  th:href="@{/rel_pessoa_servico}" role="button">Cadastrar Novo</a>        
+                </div>
+            </div>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id Pessoa Serviço </th>
+                        <th> Id Pessoa </th>
+                        <th> Id Serviço </th>
+                        <th> Data </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${listaPessoaServicos}">
+                            <td th:text="${{p.getId_pessoa_servico}}">1</td>
+                            <td th:text="${{p.getId_pessoa}}">Id Pessoa</td>
+                            <td th:text="${{p.getId_servico}}">Id Serviço</td>
+                            <td th:text="${{p.getData_uso_servico}}">Data</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/rel_pessoa_servico} + '/' + ${p.getId_pessoa_servico}">Atualizar</a>
+                                <form action="#" th:action="@{/rel_pessoa_servico} + '/' + ${p.getId_pessoa_servico}" th:method="delete" class="d-inline-block">
+                                    <button class="btn btn-outline-danger">Apagar</button>
+                                </form>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-5 pt-5">
+        <div class="row gx-5 align-items-center">
+            <h2> Serviços </h2>
+            <div class="row mb-2">
+                <div class="col">
+                    <a class="btn btn-primary" href="#"  th:href="@{/servico}" role="button">Cadastrar Novo</a>        
+                </div>
+            </div>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id Serviço </th>
+                        <th> Código </th>
+                        <th> Id Perfil </th>
+                        <th> Tipo </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${listaServicos}">
+                            <td th:text="${{p.getId_servico}}">1</td>
+                            <td th:text="${{p.getCodigo_servico}}">Código</td>
+                            <td th:text="${{p.getId_perfil}}">Id Perfil</td>
+                            <td th:text="${{p.getTipo_servico}}">Tipo</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/servico} + '/' + ${p.getId_servico}">Atualizar</a>
+                                <form action="#" th:action="@{/servico} + '/' + ${p.getId_servico}" th:method="delete" class="d-inline-block">
+                                    <button class="btn btn-outline-danger">Apagar</button>
+                                </form>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
