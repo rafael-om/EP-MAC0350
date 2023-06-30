@@ -33,15 +33,15 @@
                     </thead>
                     <tbody>
                         <tr th:each="p : ${listapessoas}">
-                            <td th:text="${{p.getIdPessoa}}">1</td>
+                            <td th:text="${{p.getId_pessoa}}">1</td>
                             <td th:text="${{p.cpf}}">CPF</td>
                             <td th:text="${{p.nome}}">Nome</td>
                             <td th:text="${{p.endereco}}">Endereço</td>
                             <td th:text="${{p.instituicao}}">Instituição</td>
-                            <td th:text="${{p.getDataNascimento}}">Nascimento</td>
+                            <td th:text="${{p.getData_nascimento}}">Nascimento</td>
                             <td class="d-flex justify-content-end">
-                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/pessoa} + '/' + ${p.getIdPessoa}">Atualizar</a>
-                                <form action="#" th:action="@{/pessoa} + '/' + ${p.getIdPessoa}" th:method="delete" class="d-inline-block">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/pessoa} + '/' + ${p.getId_pessoa}">Atualizar</a>
+                                <form action="#" th:action="@{/pessoa} + '/' + ${p.getId_pessoa}" th:method="delete" class="d-inline-block">
                                     <button class="btn btn-outline-danger">Apagar</button>
                                 </form>
                             </td>
@@ -53,12 +53,13 @@
     </div>
 
     <div class="container px-5 pt-5">
-        <div class="row mb-2">
-            <div class="col">
-                <a class="btn btn-primary" href="#"  th:href="@{/pessoa}" role="button">Cadastrar Novo</a>        
-            </div>
-        </div>
         <div class="row gx-5 align-items-center">
+            <h2> Lista dos alunos </h2>
+            <div class="row mb-2">
+                <div class="col">
+                    <a class="btn btn-primary" href="#"  th:href="@{/pessoa}" role="button">Cadastrar Novo</a>        
+                </div>
+            </div>
             <div class="col">
                 <table class="table" >
                     <thead >
@@ -70,14 +71,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="p : ${listapessoas}">
+                        <tr th:each="p : ${listaAlunos}">
                             <td th:text="${{p.getId_aluno}}">1</td>
                             <td th:text="${{p.getId_pessoa}}">2</td>
                             <td th:text="${{p.getNota_ingresso}}">Nota de Ingresso</td>
                             <td th:text="${{p.getCurso}}">Curso</td>
                             <td class="d-flex justify-content-end">
-                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/pessoa} + '/' + ${p.getIdPessoa}">Atualizar</a>
-                                <form action="#" th:action="@{/pessoa} + '/' + ${p.getIdPessoa}" th:method="delete" class="d-inline-block">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/pessoa} + '/' + ${p.getId_aluno}">Atualizar</a>
+                                <form action="#" th:action="@{/pessoa} + '/' + ${p.getId_aluno}" th:method="delete" class="d-inline-block">
                                     <button class="btn btn-outline-danger">Apagar</button>
                                 </form>
                             </td>

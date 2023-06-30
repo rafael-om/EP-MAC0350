@@ -19,11 +19,11 @@ public class Pessoa {
         this.id_pessoa = -1;
     }
 
-    public Integer getIdPessoa() {
+    public Integer getId_pessoa() {
         return id_pessoa;
     }
 
-    public void setIdPessoa(Integer id_pessoa) {
+    public void setId_pessoa(Integer id_pessoa) {
         this.id_pessoa = id_pessoa;
     }
 
@@ -59,19 +59,19 @@ public class Pessoa {
         this.instituicao = instituicao;
     }
 
-    public Date getDataNascimento() {
+    public Date getData_nascimento() {
         return data_nascimento;
     }
 
-    public void setDataNascimento(Date data_nascimento) {
+    public void setData_nascimento(Date data_nascimento) {
         this.data_nascimento = data_nascimento;
     }
 
-    public String getLoginPessoa() {
+    public String getLogin_pessoa() {
         return login_pessoa;
     }
 
-    public void setLoginPessoa(String login_pessoa) {
+    public void setLogin_pessoa(String login_pessoa) {
         this.login_pessoa = login_pessoa;
     }
 

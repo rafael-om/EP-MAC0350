@@ -19,14 +19,15 @@ public class AlunoController {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @GetMapping("/pessoas")
-    public String listapessoas(Model model) { // ORDER BY id_pessoa DESC
-        List<Aluno> alunos = jdbcTemplate.query(
-                "SELECT * FROM aluno",
-                new AlunoRowMapper());
-        model.addAttribute("listaalunos", alunos);
-        return "alunos";
-    }
+
+    // @GetMapping("/aluno")
+    // public String listaAlunos(Model model) { // ORDER BY id_pessoa DESC
+    //     List<Aluno> alunos = jdbcTemplate.query(
+    //             "SELECT * FROM aluno",
+    //             new AlunoRowMapper());
+    //     model.addAttribute("listaAlunos", alunos);
+    //     return "pessoas";
+    // }
 
     /*@GetMapping("/pessoa")
     public String formPessoa(Model model) {
