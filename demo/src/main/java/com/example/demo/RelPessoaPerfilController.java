@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @Controller
-public class RelPessoaRelPessoaPerfilController {
+public class RelPessoaPerfilController {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -38,7 +38,7 @@ public class RelPessoaRelPessoaPerfilController {
     @PostMapping("/rel_pessoa_perfil")
     public String submitRelPessoaPerfil(@ModelAttribute RelPessoaPerfil rel_pessoa_perfil, Model model) {
         
-        if (rel_pessoa_perfil.getId_rel_pessoa_perfil() > 0) {
+        if (rel_pessoa_perfil.getId_pessoa_perfil() > 0) {
             jdbcTemplate.update(
                 "UPDATE rel_pessoa_perfil SET id_pessoa = ?, id_perfil = ? WHERE id_pessoa_perfil = ?;",
                 rel_pessoa_perfil.getId_pessoa(),

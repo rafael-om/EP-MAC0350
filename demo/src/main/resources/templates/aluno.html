@@ -14,15 +14,15 @@
     <div class="container px-5 pt-5">
         <div class="row">
             <div class="col">
-                <form action="#" th:action="@{/pessoa}" th:object="${pessoa}" method="post">
-                    <input type="hidden" th:field="*{id}" />
+                <form action="#" th:action="@{/aluno}" th:object="${aluno}" method="post">
+                    <input type="hidden" th:field="*{id_aluno}" />
                     <div class="mb-3">
-                        <label for="nusp" class="form-label">No. USP</label>
-                        <input type="text" class="form-control" id="nusp" placeholder="No. USP" th:field="*{nusp}" >
+                        <label for="id_pessoa" class="form-label">Id da Pessoa</label>
+                        <input type="text" class="form-control" id="id_pessoa" placeholder="Id da Pessoa" th:field="*{id_pessoa}" >
                     </div>
                     <div class="mb-3">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Nome da pessoa" th:field="*{nome}" >
+                        <label for="nota_ingresso" class="form-label">Nota de Ingresso</label>
+                        <input type="text" class="form-control" id="nota_ingresso" placeholder="Nota de Ingresso" th:field="*{nota_ingresso}" >
                     </div>
                     <button type="submit" class="btn btn-primary">Salvar</button>
                     <a href="#" th:href="@{/pessoas}" class="btn btn-secondary">Voltar</a>

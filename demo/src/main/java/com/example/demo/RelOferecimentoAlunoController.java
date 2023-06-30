@@ -38,7 +38,7 @@ public class RelOferecimentoAlunoController {
     @PostMapping("/rel_oferecimento_aluno")
     public String submitRelOferecimentoAluno(@ModelAttribute RelOferecimentoAluno rel_oferecimento_aluno, Model model) {
         
-        if (rel_oferecimento_aluno.getId_rel_oferecimento_aluno() > 0) {
+        if (rel_oferecimento_aluno.getId_oferecimento_aluno() > 0) {
             jdbcTemplate.update(
                 "UPDATE rel_oferecimento_aluno SET id_oferecimento_dd = ?, id_aluno = ?, nota = ? WHERE id_oferecimento_aluno = ?;",
                 rel_oferecimento_aluno.getId_oferecimento_dd(),

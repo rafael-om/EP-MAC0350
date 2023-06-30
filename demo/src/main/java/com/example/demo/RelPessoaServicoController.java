@@ -38,7 +38,7 @@ public class RelPessoaServicoController {
     @PostMapping("/rel_pessoa_servico")
     public String submitRelPessoaServico(@ModelAttribute RelPessoaServico rel_pessoa_servico, Model model) {
         
-        if (rel_pessoa_servico.getId_rel_pessoa_servico() > 0) {
+        if (rel_pessoa_servico.getId_pessoa_servico() > 0) {
             jdbcTemplate.update(
                 "UPDATE rel_pessoa_servico SET id_pessoa = ?, id_servico = ?, data_uso_servico = ? WHERE id_pessoa_servico = ?;",
                 rel_pessoa_servico.getId_pessoa(),

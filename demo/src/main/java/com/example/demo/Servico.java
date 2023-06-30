@@ -13,6 +13,10 @@ public class Servico {
         this.id_servico = -1;
     }
 
+    public Integer getId_servico() {
+        return this.id_servico;
+    }
+
     public void setId_servico(Integer id_servico) {
         this.id_servico = id_servico;
     }
