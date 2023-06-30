@@ -19,55 +19,5 @@ public class AlunoController {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-
-    // @GetMapping("/aluno")
-    // public String listaAlunos(Model model) { // ORDER BY id_pessoa DESC
-    //     List<Aluno> alunos = jdbcTemplate.query(
-    //             "SELECT * FROM aluno",
-    //             new AlunoRowMapper());
-    //     model.addAttribute("listaAlunos", alunos);
-    //     return "pessoas";
-    // }
-
-    /*@GetMapping("/pessoa")
-    public String formPessoa(Model model) {
-        model.addAttribute("pessoa", new Pessoa());
-        return "pessoa";
-    }
-
-    @GetMapping("/pessoa/{id}")
-    public String editPessoa(Model model, @PathVariable Integer id) {
-        Pessoa pessoa = jdbcTemplate.queryForObject("SELECT * FROM pessoa WHERE id = ?", 
-            new PessoaRowMapper(), id);
-        model.addAttribute("pessoa", pessoa);
-        return "pessoa";
-    }
-
-    @PostMapping("/pessoa")
-    public String submitPessoa(@ModelAttribute Pessoa pessoa, Model model) {
-        
-        if (pessoa.getIdPessoa() > 0) {
-            jdbcTemplate.update(
-                "UPDATE pessoa SET nusp = ?, nome = ? WHERE id = ?",
-                pessoa.getCpf(),
-                pessoa.getNome(),
-                pessoa.getIdPessoa()
-            );
-        } else {
-            jdbcTemplate.update(
-                "INSERT INTO pessoa (nusp, nome) VALUES (?, ?)", pessoa.getCpf(), pessoa.getNome());        
-        }
-        return "redirect:/pessoas";
-    }
-
-    @DeleteMapping("/pessoa/{id}")
-    public String deletePessoa(@PathVariable Integer id) {
-        jdbcTemplate.update(
-            "DELETE FROM pessoa WHERE ID = ?",
-            id
-        );
-        return "redirect:/pessoas";
-    }*/
-
-
+    
 }

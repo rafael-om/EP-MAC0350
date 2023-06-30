@@ -57,7 +57,7 @@
             <h2> Lista dos alunos </h2>
             <div class="row mb-2">
                 <div class="col">
-                    <a class="btn btn-primary" href="#"  th:href="@{/pessoa}" role="button">Cadastrar Novo</a>        
+                    <a class="btn btn-primary" href="#"  th:href="@{/aluno}" role="button">Cadastrar Novo</a>        
                 </div>
             </div>
             <div class="col">
@@ -77,8 +77,8 @@
                             <td th:text="${{p.getNota_ingresso}}">Nota de Ingresso</td>
                             <td th:text="${{p.getCurso}}">Curso</td>
                             <td class="d-flex justify-content-end">
-                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/pessoa} + '/' + ${p.getId_aluno}">Atualizar</a>
-                                <form action="#" th:action="@{/pessoa} + '/' + ${p.getId_aluno}" th:method="delete" class="d-inline-block">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/aluno} + '/' + ${p.getId_aluno}">Atualizar</a>
+                                <form action="#" th:action="@{/aluno} + '/' + ${p.getId_aluno}" th:method="delete" class="d-inline-block">
                                     <button class="btn btn-outline-danger">Apagar</button>
                                 </form>
                             </td>
@@ -88,7 +88,160 @@
             </div>
         </div>
     </div>
-    
+
+    <div class="container px-5 pt-5">
+        <div class="row gx-5 align-items-center">
+            <h2> Lista das Disciplinas </h2>
+            <div class="row mb-2">
+                <div class="col">
+                    <a class="btn btn-primary" href="#"  th:href="@{/disciplina}" role="button">Cadastrar Novo</a>        
+                </div>
+            </div>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id Disciplina </th>
+                        <th>  Código </th>
+                        <th> Nome </th>
+                        <th> Ementa </th>
+                        <th> Data Criação </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${listaDisciplinas}">
+                            <td th:text="${{p.getId_disciplina}}">1</td>
+                            <td th:text="${{p.getCodigo_disciplina}}">Código</td>
+                            <td th:text="${{p.getNome}}">Nome</td>
+                            <td th:text="${{p.getEmenta}}">Ementa</td>
+                            <td th:text="${{p.getData_criacao}}">Criação</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/disciplina} + '/' + ${p.getId_disciplina}">Atualizar</a>
+                                <form action="#" th:action="@{/disciplina} + '/' + ${p.getId_disciplina}" th:method="delete" class="d-inline-block">
+                                    <button class="btn btn-outline-danger">Apagar</button>
+                                </form>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-5 pt-5">
+        <div class="row gx-5 align-items-center">
+            <h2> Lista dos Funcionários </h2>
+            <div class="row mb-2">
+                <div class="col">
+                    <a class="btn btn-primary" href="#"  th:href="@{/funcionario}" role="button">Cadastrar Novo</a>        
+                </div>
+            </div>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id Funcionário </th>
+                        <th> Id Pessoa </th>
+                        <th> Especialidades </th>
+                        <th> Funções Técnicas </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${listaFuncionarios}">
+                            <td th:text="${{p.getId_funcionario}}">1</td>
+                            <td th:text="${{p.getId_pessoa}}">Id Pessoa</td>
+                            <td th:text="${{p.getEspecialidades}}">Especialidades</td>
+                            <td th:text="${{p.getFuncoes_tecnicas}}">Funções Técnicas</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/funcionario} + '/' + ${p.getId_funcionario}">Atualizar</a>
+                                <form action="#" th:action="@{/funcionario} + '/' + ${p.getId_funcionario}" th:method="delete" class="d-inline-block">
+                                    <button class="btn btn-outline-danger">Apagar</button>
+                                </form>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-5 pt-5">
+        <div class="row gx-5 align-items-center">
+            <h2> Lista dos Docentes </h2>
+            <div class="row mb-2">
+                <div class="col">
+                    <a class="btn btn-primary" href="#"  th:href="@{/docente}" role="button">Cadastrar Novo</a>        
+                </div>
+            </div>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id Docente </th>
+                        <th> Id Pessoa </th>
+                        <th> Especialidades </th>
+                        <th> Funções Técnicas </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${listaDocentes}">
+                            <td th:text="${{p.getId_docente}}">1</td>
+                            <td th:text="${{p.getId_pessoa}}">Id Pessoa</td>
+                            <td th:text="${{p.getEspecialidades}}">Especialidades</td>
+                            <td th:text="${{p.getFuncoes_tecnicas}}">Funções Técnicas</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/docente} + '/' + ${p.getId_docente}">Atualizar</a>
+                                <form action="#" th:action="@{/docente} + '/' + ${p.getId_docente}" th:method="delete" class="d-inline-block">
+                                    <button class="btn btn-outline-danger">Apagar</button>
+                                </form>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-5 pt-5">
+        <div class="row gx-5 align-items-center">
+            <h2> Oferecimento de disciplinas por docente </h2>
+            <div class="row mb-2">
+                <div class="col">
+                    <a class="btn btn-primary" href="#"  th:href="@{/oferecdiscdoc}" role="button">Cadastrar Novo</a>        
+                </div>
+            </div>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id Oferecimento </th>
+                        <th> Código </th>
+                        <th> Id Disciplina </th>
+                        <th> Id Docente </th>
+                        <th> Início </th>
+                        <th> Fim </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${listaOferecimentos}">
+                            <td th:text="${{p.getId_oferecimento_dd}}">1</td>
+                            <td th:text="${{p.getCodigo_oferecimento}}">Código</td>
+                            <td th:text="${{p.getId_disciplina}}">Id Disciplina</td>
+                            <td th:text="${{p.getId_docente}}">Id Docente</td>
+                            <td th:text="${{p.getData_inicio}}">Início</td>
+                            <td th:text="${{p.getData_fim}}">Fim</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/oferecdiscdoc} + '/' + ${p.getId_docente}">Atualizar</a>
+                                <form action="#" th:action="@{/oferecdiscdoc} + '/' + ${p.getId_docente}" th:method="delete" class="d-inline-block">
+                                    <button class="btn btn-outline-danger">Apagar</button>
+                                </form>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

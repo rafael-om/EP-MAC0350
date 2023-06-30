@@ -31,6 +31,27 @@ public class PessoasController {
                 "SELECT * FROM pessoa",
                 new PessoaRowMapper());
         model.addAttribute("listapessoas", pessoas);
+
+        List<Disciplina> disciplinas = jdbcTemplate.query(
+                "SELECT * FROM disciplina",
+                new DisciplinaRowMapper());
+        model.addAttribute("listaDisciplinas", disciplinas);
+
+        List<Docente> docentes = jdbcTemplate.query(
+                "SELECT * FROM docente",
+                new DocenteRowMapper());
+        model.addAttribute("listaDocentes", docentes);
+
+        List<Funcionario> funcionarios = jdbcTemplate.query(
+                "SELECT * FROM funcionario",
+                new FuncionarioRowMapper());
+        model.addAttribute("listaFuncionarios", funcionarios);
+
+        List<OferecimentoDisciplinaDocente> oferecimentos = jdbcTemplate.query(
+                "SELECT * FROM oferecimento_disciplina_docente",
+                new OferecimentoDisciplinaDocenteRowMapper());
+        model.addAttribute("listaOferecimentos", oferecimentos);
+
         return "pessoas";
     }
 
