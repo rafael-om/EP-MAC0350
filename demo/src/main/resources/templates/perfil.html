@@ -8,25 +8,21 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav">
         <div class="container px-5">
-            <a class="navbar-brand fw-bold" href="#page-top">MAC0350 - Demo - Cadastro de Aluno</a>            
+            <a class="navbar-brand fw-bold" href="#page-top">MAC0350 - Demo - Cadastro de Perfil</a>            
         </div>
     </nav>
     <div class="container px-5 pt-5">
         <div class="row">
             <div class="col">
-                <form action="#" th:action="@{/aluno}" th:object="${aluno}" method="post">
-                    <input type="hidden" th:field="*{id_aluno}" />
+                <form action="#" th:action="@{/perfil}" th:object="${perfil}" method="post">
+                    <input type="hidden" th:field="*{id_perfil}" />
                     <div class="mb-3">
-                        <label for="id_pessoa" class="form-label">Id da Pessoa</label>
-                        <input type="text" class="form-control" id="id_pessoa" placeholder="Id da Pessoa" th:field="*{id_pessoa}" >
+                        <label for="codigo_perfil" class="form-label">Código do perfil</label>
+                        <input type="text" class="form-control" id="codigo_perfil" placeholder="Código" th:field="*{codigo_perfil}" >
                     </div>
                     <div class="mb-3">
-                        <label for="nota_ingresso" class="form-label">Nota de Ingresso</label>
-                        <input type="text" class="form-control" id="nota_ingresso" placeholder="Nota de Ingresso" th:field="*{nota_ingresso}" >
-                    </div>
-                    <div class="mb-3">
-                        <label for="curso" class="form-label">Curso</label>
-                        <input type="text" class="form-control" id="curso" placeholder="Curso" th:field="*{curso}" >
+                        <label for="tipo_perfil" class="form-label">Tipo</label>
+                        <input type="text" class="form-control" id="tipo_perfil" placeholder="Tipo" th:field="*{tipo_perfil}" >
                     </div>
                     <button type="submit" class="btn btn-primary">Salvar</button>
                     <a href="#" th:href="@{/pessoas}" class="btn btn-secondary">Voltar</a>

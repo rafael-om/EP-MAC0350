@@ -8,25 +8,25 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav">
         <div class="container px-5">
-            <a class="navbar-brand fw-bold" href="#page-top">MAC0350 - Demo - Cadastro de Aluno</a>            
+            <a class="navbar-brand fw-bold" href="#page-top">MAC0350 - Demo - Cadastro de Perfil</a>            
         </div>
     </nav>
     <div class="container px-5 pt-5">
         <div class="row">
             <div class="col">
-                <form action="#" th:action="@{/aluno}" th:object="${aluno}" method="post">
-                    <input type="hidden" th:field="*{id_aluno}" />
+                <form action="#" th:action="@{/servico}" th:object="${servico}" method="post">
+                    <input type="hidden" th:field="*{id_servico}" />
                     <div class="mb-3">
-                        <label for="id_pessoa" class="form-label">Id da Pessoa</label>
-                        <input type="text" class="form-control" id="id_pessoa" placeholder="Id da Pessoa" th:field="*{id_pessoa}" >
+                        <label for="codigo_servico" class="form-label">Código do Serviço</label>
+                        <input type="text" class="form-control" id="codigo_servico" placeholder="Código" th:field="*{codigo_servico}" >
                     </div>
                     <div class="mb-3">
-                        <label for="nota_ingresso" class="form-label">Nota de Ingresso</label>
-                        <input type="text" class="form-control" id="nota_ingresso" placeholder="Nota de Ingresso" th:field="*{nota_ingresso}" >
+                        <label for="id_perfil" class="form-label">Id do Perfil</label>
+                        <input type="text" class="form-control" id="id_perfil" placeholder="Id do Perfil" th:field="*{id_perfil}" >
                     </div>
                     <div class="mb-3">
-                        <label for="curso" class="form-label">Curso</label>
-                        <input type="text" class="form-control" id="curso" placeholder="Curso" th:field="*{curso}" >
+                        <label for="tipo_servico" class="form-label">Tipo do Serviço</label>
+                        <input type="text" class="form-control" id="tipo_servico" placeholder="Tipo do Serviço" th:field="*{tipo_servico}" >
                     </div>
                     <button type="submit" class="btn btn-primary">Salvar</button>
                     <a href="#" th:href="@{/pessoas}" class="btn btn-secondary">Voltar</a>

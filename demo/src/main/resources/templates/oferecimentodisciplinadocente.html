@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Cadastro de Pessoa</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav">
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="#page-top">MAC0350 - Demo - Cadastro de Oferecimento de Disciplina por Docente</a>            
+        </div>
+    </nav>
+    <div class="container px-5 pt-5">
+        <div class="row">
+            <div class="col">
+                <form action="#" th:action="@{/oferecimentodisciplinadocente}" th:object="${oferecimentodisciplinadocente}" method="post">
+                    <input type="hidden" th:field="*{id_oferecimento_dd}" />
+                    <div class="mb-3">
+                        <label for="codigo_oferecimento" class="form-label">Código do Oferecimento</label>
+                        <input type="text" class="form-control" id="codigo_oferecimento" placeholder="Código" th:field="*{codigo_oferecimento}" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_disciplina" class="form-label">Id da Disciplina</label>
+                        <input type="text" class="form-control" id="id_disciplina" placeholder="Id da Disciplina" th:field="*{id_disciplina}" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_docente" class="form-label">Id do Docente</label>
+                        <input type="text" class="form-control" id="id_docente" placeholder="Id do Docente" th:field="*{id_docente}" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="data_inicio" class="form-label">Data de Início</label>
+                        <input type="text" class="form-control" id="data_inicio" placeholder="ano-mês-dia" th:field="*{data_inicio}" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="data_fim" class="form-label">Data de Fim</label>
+                        <input type="text" class="form-control" id="data_fim" placeholder="ano-mês-dia" th:field="*{data_fim}" >
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <a href="#" th:href="@{/pessoas}" class="btn btn-secondary">Voltar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

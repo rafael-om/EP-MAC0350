@@ -102,7 +102,7 @@
                     <thead >
                         <tr >
                         <th> Id Disciplina </th>
-                        <th>  Código </th>
+                        <th> Código </th>
                         <th> Nome </th>
                         <th> Ementa </th>
                         <th> Data Criação </th>
@@ -207,7 +207,7 @@
             <h2> Oferecimento de disciplinas por docente </h2>
             <div class="row mb-2">
                 <div class="col">
-                    <a class="btn btn-primary" href="#"  th:href="@{/oferecdiscdoc}" role="button">Cadastrar Novo</a>        
+                    <a class="btn btn-primary" href="#"  th:href="@{/oferecimentodisciplinadocente}" role="button">Cadastrar Novo</a>        
                 </div>
             </div>
             <div class="col">
@@ -231,8 +231,8 @@
                             <td th:text="${{p.getData_inicio}}">Início</td>
                             <td th:text="${{p.getData_fim}}">Fim</td>
                             <td class="d-flex justify-content-end">
-                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/oferecdiscdoc} + '/' + ${p.getId_docente}">Atualizar</a>
-                                <form action="#" th:action="@{/oferecdiscdoc} + '/' + ${p.getId_docente}" th:method="delete" class="d-inline-block">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/oferecimentodisciplinadocente} + '/' + ${p.getId_oferecimento_dd}">Atualizar</a>
+                                <form action="#" th:action="@{/oferecimentodisciplinadocente} + '/' + ${p.getId_oferecimento_dd}" th:method="delete" class="d-inline-block">
                                     <button class="btn btn-outline-danger">Apagar</button>
                                 </form>
                             </td>
