@@ -43,7 +43,8 @@ public class RelOferecimentoAlunoController {
                 "UPDATE rel_oferecimento_aluno SET id_oferecimento_dd = ?, id_aluno = ?, nota = ? WHERE id_oferecimento_aluno = ?;",
                 rel_oferecimento_aluno.getId_oferecimento_dd(),
                 rel_oferecimento_aluno.getId_aluno(),
-                rel_oferecimento_aluno.getNota()
+                rel_oferecimento_aluno.getNota(),
+                rel_oferecimento_aluno.getId_oferecimento_aluno()
             );
         } else {
             jdbcTemplate.update(

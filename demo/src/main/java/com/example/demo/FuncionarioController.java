@@ -43,7 +43,8 @@ public class FuncionarioController {
                 "UPDATE funcionario SET id_pessoa = ?, especialidades = ?, funcoes_tecnicas = ? WHERE id_funcionario = ?;",
                 funcionario.getId_pessoa(),
                 funcionario.getEspecialidades(),
-                funcionario.getFuncoes_tecnicas()
+                funcionario.getFuncoes_tecnicas(),
+                funcionario.getId_funcionario()
             );
         } else {
             jdbcTemplate.update(
@@ -52,7 +53,7 @@ public class FuncionarioController {
                 funcionario.getEspecialidades(),
                 funcionario.getFuncoes_tecnicas());        
         }
-        return "redirect:/funcionarios";
+        return "redirect:/pessoas";
     }
 
     @DeleteMapping("/funcionario/{id_funcionario}")
@@ -61,6 +62,6 @@ public class FuncionarioController {
             "DELETE FROM funcionario WHERE id_funcionario = ?;",
             id_funcionario
         );
-        return "redirect:/funcionarios";
+        return "redirect:/pessoas";
     }
 }

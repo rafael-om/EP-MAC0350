@@ -99,7 +99,7 @@ CREATE TABLE rel_oferecimento_aluno (
 
 /* 3.1) */
 CREATE OR REPLACE FUNCTION servicos_por_perfil()
-RETURNS TABLE (nome VARCHAR, tipo_servico VARCHAR)
+RETURNS TABLE (nome VARCHAR, tipo_perfil VARCHAR, tipo_servico VARCHAR)
 LANGUAGE plpgsql
 AS $$
 BEGIN

@@ -43,7 +43,8 @@ public class DocenteController {
                 "UPDATE docente SET id_pessoa = ?, especialidades = ?, funcoes_tecnicas = ? WHERE id_docente = ?;",
                 docente.getId_pessoa(),
                 docente.getEspecialidades(),
-                docente.getFuncoes_tecnicas()
+                docente.getFuncoes_tecnicas(),
+                docente.getId_docente()
             );
         } else {
             jdbcTemplate.update(
@@ -52,7 +53,7 @@ public class DocenteController {
                 docente.getEspecialidades(),
                 docente.getFuncoes_tecnicas());        
         }
-        return "redirect:/docentes";
+        return "redirect:/pessoas";
     }
 
     @DeleteMapping("/docente/{id_docente}")
@@ -61,6 +62,6 @@ public class DocenteController {
             "DELETE FROM docente WHERE id_docente = ?;",
             id_docente
         );
-        return "redirect:/docentes";
+        return "redirect:/pessoas";
     }
 }

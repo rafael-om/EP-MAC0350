@@ -43,7 +43,8 @@ public class ServicoController {
                 "UPDATE servico SET codigo_servico = ?, id_perfil = ?, tipo_servico = ? WHERE id_servico = ?;",
                 servico.getCodigo_servico(),
                 servico.getId_perfil(),
-                servico.getTipo_servico()
+                servico.getTipo_servico(),
+                servico.getId_servico()
             );
         } else {
             jdbcTemplate.update(

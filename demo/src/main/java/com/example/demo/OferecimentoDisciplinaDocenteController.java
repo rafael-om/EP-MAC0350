@@ -38,7 +38,7 @@ public class OferecimentoDisciplinaDocenteController {
     @PostMapping("/oferecimento_disciplina_docente")
     public String submitOferecimentoDisciplinaDocente(@ModelAttribute OferecimentoDisciplinaDocente oferecimento_disciplina_docente, Model model) {
         
-        if (oferecimento_disciplina_docente.getId_oferecimento_disciplina_docente() > 0) {
+        if (oferecimento_disciplina_docente.getId_oferecimento_dd() > 0) {
             jdbcTemplate.update(
                 "UPDATE oferecimento_disciplina_docente SET codigo_oferecimento = ?, id_disciplina = ?, id_docente = ?, data_inicio = ?, data_fim = ?  WHERE id_oferecimento_dd = ?;",
                 oferecimento_disciplina_docente.getCodigo_oferecimento(),
@@ -56,7 +56,7 @@ public class OferecimentoDisciplinaDocenteController {
                 oferecimento_disciplina_docente.getData_inicio(),
                 oferecimento_disciplina_docente.getData_fim());        
         }
-        return "redirect:/oferecimento_disciplina_docentes";
+        return "redirect:/pessoas";
     }
 
     @DeleteMapping("/oferecimento_disciplina_docente/{id_oferecimento_dd}")
@@ -65,6 +65,6 @@ public class OferecimentoDisciplinaDocenteController {
             "DELETE FROM oferecimento_disciplina_docente WHERE id_oferecimento_dd = ?;",
             id_oferecimento_dd
         );
-        return "redirect:/oferecimento_disciplina_docentes";
+        return "redirect:/pessoas";
     }
 }

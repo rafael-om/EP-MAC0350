@@ -44,7 +44,8 @@ public class DisciplinaController {
                 disciplina.getCodigo_disciplina(),
                 disciplina.getNome(),
                 disciplina.getEmenta(),
-                disciplina.getData_criacao()
+                disciplina.getData_criacao(),
+                disciplina.getId_disciplina()
             );
         } else {
             jdbcTemplate.update(
@@ -54,7 +55,7 @@ public class DisciplinaController {
                 disciplina.getEmenta(),
                 disciplina.getData_criacao());        
         }
-        return "redirect:/disciplinas";
+        return "redirect:/pessoas";
     }
 
     @DeleteMapping("/disciplina/{id_disciplina}")
@@ -63,6 +64,6 @@ public class DisciplinaController {
             "DELETE FROM disciplina WHERE id_disciplina = ?;",
             id_disciplina
         );
-        return "redirect:/disciplinas";
+        return "redirect:/pessoas";
     }
 }

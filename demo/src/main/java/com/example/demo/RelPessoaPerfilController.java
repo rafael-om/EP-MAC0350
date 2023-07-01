@@ -42,7 +42,8 @@ public class RelPessoaPerfilController {
             jdbcTemplate.update(
                 "UPDATE rel_pessoa_perfil SET id_pessoa = ?, id_perfil = ? WHERE id_pessoa_perfil = ?;",
                 rel_pessoa_perfil.getId_pessoa(),
-                rel_pessoa_perfil.getId_perfil()
+                rel_pessoa_perfil.getId_perfil(),
+                rel_pessoa_perfil.getId_pessoa_perfil()
             );
         } else {
             jdbcTemplate.update(

@@ -77,6 +77,26 @@ public class PessoasController {
                 new ServicoRowMapper());
         model.addAttribute("listaServicos", servicos);
 
+        List<ExercicioTresUm> extu = jdbcTemplate.query(
+                "SELECT * FROM servicos_por_perfil()",
+                new ExercicioTresUmRowMapper());
+        model.addAttribute("exercicio_tresum", extu);
+        
+        List<ExercicioTresDois> extd = jdbcTemplate.query(
+                "SELECT * FROM total_de_servicos_por_perfil()",
+                new ExercicioTresDoisRowMapper());
+        model.addAttribute("exercicio_tresdois", extd);
+
+        List<ExercicioTresTres> extt = jdbcTemplate.query(
+                "SELECT * FROM disciplinas_mais_oferecidas()",
+                new ExercicioTresTresRowMapper());
+        model.addAttribute("exercicio_trestres", extt);
+
+        List<ExercicioTresQuatro> extq = jdbcTemplate.query(
+                "SELECT * FROM docentes_mais_frequentes()",
+                new ExercicioTresQuatroRowMapper());
+        model.addAttribute("exercicio_tresquatro", extq);
+
         return "pessoas";
     }
 

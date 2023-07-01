@@ -8,6 +8,10 @@ public class Perfil {
     String codigo_perfil;
     String tipo_perfil;
 
+    public Perfil() {
+        this.id_perfil = -1;
+    }
+
     public Integer getId_perfil() {
         return id_perfil;
     }

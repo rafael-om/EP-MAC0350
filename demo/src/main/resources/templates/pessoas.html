@@ -207,7 +207,7 @@
             <h2> Oferecimento de disciplinas por docente </h2>
             <div class="row mb-2">
                 <div class="col">
-                    <a class="btn btn-primary" href="#"  th:href="@{/oferecimentodisciplinadocente}" role="button">Cadastrar Novo</a>        
+                    <a class="btn btn-primary" href="#"  th:href="@{/oferecimento_disciplina_docente}" role="button">Cadastrar Novo</a>        
                 </div>
             </div>
             <div class="col">
@@ -231,8 +231,8 @@
                             <td th:text="${{p.getData_inicio}}">Início</td>
                             <td th:text="${{p.getData_fim}}">Fim</td>
                             <td class="d-flex justify-content-end">
-                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/oferecimentodisciplinadocente} + '/' + ${p.getId_oferecimento_dd}">Atualizar</a>
-                                <form action="#" th:action="@{/oferecimentodisciplinadocente} + '/' + ${p.getId_oferecimento_dd}" th:method="delete" class="d-inline-block">
+                                <a href="#" class="btn btn-outline-primary me-2" th:href="@{/oferecimento_disciplina_docente} + '/' + ${p.getId_oferecimento_dd}">Atualizar</a>
+                                <form action="#" th:action="@{/oferecimento_disciplina_docente} + '/' + ${p.getId_oferecimento_dd}" th:method="delete" class="d-inline-block">
                                     <button class="btn btn-outline-danger">Apagar</button>
                                 </form>
                             </td>
@@ -419,6 +419,86 @@
                                 </form>
                             </td>
                         </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-5 pt-5">
+        <div class="row gx-5 align-items-center">
+            <h1> Exercício 3 </h1>
+            <h2> Exercício 3.1 </h2>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Nome da pessoa </th>
+                        <th> Tipo do Perfil </th>
+                        <th> Tipo do Serviço </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${exercicio_tresum}">
+                            <td th:text="${{p.getNome}}">1</td>
+                            <td th:text="${{p.getTipo_perfil}}">Tipo do Perfil</td>
+                            <td th:text="${{p.getTipo_servico}}">Tipo do Serviço</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2> Exercício 3.2 </h2>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Tipo do Perfil </th>
+                        <th> Total </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${exercicio_tresdois}">
+                            <td th:text="${{p.getTipo_perfil}}">Tipo do Perfil</td>
+                            <td th:text="${{p.getTotal}}">Total</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2> Exercício 3.3 </h2>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id Oferecimento </th>
+                        <th> Código da Disciplina </th>
+                        <th> Nome do Docente </th>
+                        <th> Nome do Aluno </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${exercicio_trestres}">
+                            <td th:text="${{p.getId_oferecimento}}">Id Oferecimento</td>
+                            <td th:text="${{p.getCodigo_disciplina}}"> Código da Disciplina </td>
+                            <td th:text="${{p.getNome_docente}}"> Nome do Docente </td>
+                            <td th:text="${{p.getNome_aluno}}"> Nome do Aluno </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2> Exercício 3.4 </h2>
+            <div class="col">
+                <table class="table" >
+                    <thead >
+                        <tr >
+                        <th> Id do Docente </th>
+                        <th> Nome do Docente </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${exercicio_tresquatro}">
+                            <td th:text="${{p.getId_docente}}">Id do Docente</td>
+                            <td th:text="${{p.getNome_docente}}">Id do Docente</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

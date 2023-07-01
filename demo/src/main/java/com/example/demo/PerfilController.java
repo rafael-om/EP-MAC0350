@@ -42,7 +42,8 @@ public class PerfilController {
             jdbcTemplate.update(
                 "UPDATE perfil SET codigo_perfil = ?, tipo_perfil = ? WHERE id_perfil = ?;",
                 perfil.getCodigo_perfil(),
-                perfil.getTipo_perfil()
+                perfil.getTipo_perfil(),
+                perfil.getId_perfil()
             );
         } else {
             jdbcTemplate.update(

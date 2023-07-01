@@ -43,7 +43,8 @@ public class RelPessoaServicoController {
                 "UPDATE rel_pessoa_servico SET id_pessoa = ?, id_servico = ?, data_uso_servico = ? WHERE id_pessoa_servico = ?;",
                 rel_pessoa_servico.getId_pessoa(),
                 rel_pessoa_servico.getId_servico(),
-                rel_pessoa_servico.getData_uso_servico()
+                rel_pessoa_servico.getData_uso_servico(),
+                rel_pessoa_servico.getId_pessoa_servico()
             );
         } else {
             jdbcTemplate.update(
